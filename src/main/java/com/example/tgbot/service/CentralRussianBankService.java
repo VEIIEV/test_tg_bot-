@@ -4,6 +4,7 @@ import com.example.tgbot.DTO.GetCursOnDateXml;
 import com.example.tgbot.DTO.GetCursOnDateXmlResponse;
 import com.example.tgbot.DTO.ValuteCursOnDate;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -14,6 +15,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 //Данный класс наследуется от WebServiceTemplate, который предоставляет удобный способ взаимодействия с SOAP веб сервисами
+@Service
 public class CentralRussianBankService extends WebServiceTemplate {
     //Тут случается некоторая магия Spring и в момент запуска вашего приложения, сюда поставляется значение из application.properties или application.yml
     @Value("${cbr.api.url}")

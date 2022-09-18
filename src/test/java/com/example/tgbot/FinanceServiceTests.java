@@ -17,7 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 // указываем, что инстанс теста создаётся на весь класс (т.е. для отработки всех методов)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class FinanceServiceTest {
+class FinanceServiceTests {
 
     // упоминание нашего сервиса с аннотацией, которая имитирует сервис
     // и включает имитацию нужных зависимостей,
