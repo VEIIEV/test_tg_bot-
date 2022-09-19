@@ -63,7 +63,7 @@ public class CurrencyController {
         return "всё чики пики";
     }
 
-    //получание количства пополнений которые превышают определенную сумму
+    //получение количества пополнений которые превышают определенную сумму
     @GetMapping("/getStats")
 
     public int getStatsAboutIncomesThatGreater(@RequestParam(value= "amount") BigDecimal amount){

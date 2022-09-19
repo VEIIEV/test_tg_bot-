@@ -3,9 +3,15 @@ package com.example.tgbot.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 @Repository
 @RequiredArgsConstructor
@@ -13,13 +19,13 @@ public class StatsRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public int getCountOfIncomesThatGreaterThan(BigDecimal amount){
-        return  jdbcTemplate.queryForObject("SELECT count(*) FROM incomes WHERE income > ? ", Integer.class, amount );
-    }
+    //  public int getCountOfIncomesThatGreaterThan(BigDecimal amount){
+        //      return  jdbcTemplate.queryForObject("SELECT count(*) FROM incomes WHERE income > ? ", Integer.class, amount );
+        //  }
 
 
     //способ реализации того же самого только через именнованые темплейты
-    /*private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     public int getCountOfIncomesThatGreaterThan(BigDecimal amount){
         Map<String, Object> parameters = new HashMap<>();
@@ -34,5 +40,5 @@ public class StatsRepository {
             return resultSet.getInt("COUNT");
         }
     }
-    */
+
 }
