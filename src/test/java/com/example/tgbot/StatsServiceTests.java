@@ -7,10 +7,12 @@ import org.junit.jupiter.api.*;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
 
 import java.math.BigDecimal;
 
 @SpringBootTest
+@TestPropertySource(locations = "/application.properties")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
  class StatsServiceTests {
 
